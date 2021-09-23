@@ -15,9 +15,9 @@
 
         rectangle.style.left = `${leftPosition}px`;
 
-        if (leftPosition < 200) {
+        if (leftPosition < 500) {
           console.log(`Before animateDiv`);
-          animateDiv();
+          requestAnimationFrame(animateDiv);
           console.log(`After animateDiv`);
         }
 
