@@ -1,10 +1,12 @@
-function download(url) {
+function download(url, callback) {
     console.log(`Start downloading video from ${url} ...`);
   
     setTimeout(() => {
       const fileName = url.split("/").pop();
       console.log(`Video downloaded from ${url} to ${fileName}.`);
-    }, 2000);
+      callback(fileName);
+    }, 3000);
+    
   }
   
   function process(videoFile) {
@@ -17,6 +19,6 @@ function download(url) {
   
   const url = "https://www.thinkful.com/sync-and-async.mov";
   
-  const fileName = download(url);
+  download(url, process);
+
   
-  process(fileName);
